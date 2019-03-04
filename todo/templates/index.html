@@ -8,10 +8,15 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        .border-3 {
+            border-width: 3px !important;
+        }
+    </style>
 </head>
 
-<body>
-    <div class="container" style="max-width: 700px">
+<body style="background-color: #d2af73">
+    <div class="container p-3" style="max-width: 700px; background-color:#e5d0ad">
         <h1 class="text-center">Todo</h1>
         <form action="" method="POST">
             {% csrf_token %}
@@ -45,18 +50,18 @@
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    dropdown
+                    Select List
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <a class="dropdown-item" href="{% url 'TodoList' %}">All</a>
                     {% for category in categories %}
-                    <button type="submit" class="dropdown-item" name="showCategory"
-                        value="{{ category.name }}" formnovalidate="">{{ category.name }}</button>
+                    <a class="dropdown-item" href="{% url 'category' category %}">{{ category }}</a>
                     {% endfor %}
                 </div>
             </div>
 
             {% for todo in todos %}
-            <div class="row border m-2 p-2">
+            <div class="row border border-3 m-2 p-2">
                 <div class="col-1 align-self-center text-center custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" name="checkedbox" id="{{ todo.id }}"
                         value="{{ todo.id }}">
