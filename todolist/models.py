@@ -18,7 +18,7 @@ class TodoList(models.Model):
     category = models.ForeignKey(Category, default="general", on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ["-due_date"]
+        ordering = ["due_date"]
 
     def __str__(self):
         return self.title
