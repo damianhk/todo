@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Todo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,7 +17,7 @@
 </head>
 
 <body style="background-color: #d2af73">
-    <div class="container p-3" style="max-width: 700px; background-color:#e5d0ad">
+    <div class="container p-3 " style="max-width: 700px; background-color:#e5d0ad">
         <h1 class="text-center">Todo</h1>
         <form action="" method="POST">
             {% csrf_token %}
@@ -26,7 +27,7 @@
                     maxlength="250" required>
             </div>
             <div class="row">
-                <div class="col-md-6 mb-3">
+                <div class="col-lg-6 mb-3">
                     <label for="category">Category</label>
                     <select class="custom-select d-block w-100" id="category" name="category" required>
                         <option class="disabled" value="">Choose a category</option>
@@ -35,7 +36,7 @@
                         {% endfor %}
                     </select>
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-lg-6 mb-3">
                     <label for="dueDate">Due Date</label>
                     <input type="date" class="form-control" id="dueDate" name="dueDate" placeholder="" required>
                 </div>
